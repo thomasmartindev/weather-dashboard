@@ -54,9 +54,43 @@ form {
   justify-content: center;
 }
 
+input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  outline: none;
+  padding: 10px;
+}
+
+input[type="image"] {
+  cursor: pointer;
+  height: 100%;
+  width: 40px;
+}
+
+::placeholder { color: rgb(200, 200, 200); opacity: 1; }
+:-ms-input-placeholder { color: rgb(200, 200, 200); }
+::-ms-input-placeholder { color: rgb(200, 200, 200) }
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.err {
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .bottom {
+  bottom: 25%;
   display: flex;
   flex-direction: column;
+  position: absolute;
 }
 
 button {
@@ -64,6 +98,7 @@ button {
   border: none;
   color: white;
   cursor: pointer;
+  font-family: Montserrat, sans-serif;
   padding: 5px 10px;
 }
 
