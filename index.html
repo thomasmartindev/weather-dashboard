@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="icon" href="favicon.ico">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <div class="top">
+        <div class="top-left">
+          <p class="description" id="description"></p>
+          <p id="searchedFor"></p>
+          <p class="temp" id="temp"></p>
+          <p class="unit" id="unit"></p>
+        </div>
+        <div class="top-right">
+          <p>Feels Like</p>
+          <p class="data" id="feelsLike"></p>
+          <p>Humidity</p>
+          <p class="data" id="humidity"></p>
+          <p>Wind Speed</p>
+          <p class="data" id="windSpeed"></p>
+        </div>
+      </div>
+      <form id="form">
+        <input type="search" placeholder="Search Location...">
+        <input type="submit">
+      </form>
+      <div class="bottom">
+        <div class="bottom-top">
+          <button class="btn-active" id="dailyBtn">Daily</button>
+          <button id="threeHourlyBtn">3-Hourly</button>
+        </div>
+        <div class="bottom-bottom">
+          
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>thomasmdevelopment</p>
+      <a href="https://github.com/thomasmdevelopment" target="_blank"><i class="fab fa-github"></i></a>
+    </footer>
+  </body>
+</html>
