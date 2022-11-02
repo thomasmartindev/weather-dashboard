@@ -13,11 +13,19 @@
   </head>
   <body>
     <main>
+      <div class="search">
+        <form id="form">
+          <input type="search" placeholder="Search Location..." autofocus>
+          <input type="image" src="search.png" alt="Submit">
+        </form>
+        <p class="err" id="err"></p>
+      </div>
       <div class="top">
         <div class="top-left">
           <p class="description" id="description"></p>
           <p id="searchedFor"></p>
           <p class="temp" id="temp"></p>
+          <img class="weather-icon" id="weatherIcon">
           <div class="temp-container">
             <p id="tempMin"></p>
             <p id="tempMax"></p>
@@ -25,19 +33,24 @@
           <p class="unit" id="unit"></p>
         </div>
         <div class="top-right">
-          <p>Feels Like</p>
-          <p class="data" id="feelsLike"></p>
-          <p>Humidity</p>
-          <p class="data" id="humidity"></p>
-          <p>Wind Speed</p>
-          <p class="data" id="windSpeed"></p>
+          <div class="top-right-left">
+            <p>Feels Like</p>
+            <p class="data" id="feelsLike"></p>
+            <p>Humidity</p>
+            <p class="data" id="humidity"></p>
+            <p>Visibility</p>
+            <p class="data" id="visibility"></p>
+          </div>
+          <div class="top-right-right">
+            <p>Wind Speed</p>
+            <p class="data" id="windSpeed"></p>
+            <p>Wind Direction</p>
+            <p class="data" id="windDirection"></p>
+            <p>Pressure</p>
+            <p class="data" id="pressure"></p>
+          </div>
         </div>
       </div>
-      <form id="form">
-        <input type="search" placeholder="Search Location..." autofocus>
-        <input type="image" src="search.png" alt="Submit">
-      </form>
-      <p class="err" id="err"></p>
       <div class="bottom">
         <div class="bottom-top">
           <button class="btn-active" id="dailyBtn">Daily</button>
