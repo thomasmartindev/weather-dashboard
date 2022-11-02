@@ -39,6 +39,11 @@ main {
   font-weight: 900;
 }
 
+.temp-container {
+  column-gap: 10px;
+  display: flex;
+}
+
 .unit {
   cursor: pointer;
   font-size: 12px;
