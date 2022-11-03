@@ -42,7 +42,7 @@ async function celsius() {
     feelsLike.textContent = `${round(data.main.feels_like)} °C`;
     pressure.textContent = `${data.main.pressure} hPa`;
     humidity.textContent = `${data.main.humidity} %`;
-    windSpeed.textContent = `${round(data.wind.speed)} km/h`;
+    windSpeed.textContent = `${round(data.wind.speed * 3.6)} km/h`;
     visibility.textContent = `${data.visibility / 1000} km`;
     weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     err.textContent = "";
