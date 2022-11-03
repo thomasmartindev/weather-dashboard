@@ -136,7 +136,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   column-gap: 20px;
   display: flex;
   justify-content: space-around;
-  margin-top: 40vh;
+  margin-top: 200px;
 }
 
 .day {
