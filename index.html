@@ -23,7 +23,7 @@
       <div class="top">
         <div class="top-left">
           <p class="description" id="description"></p>
-          <p id="searchedFor"></p>
+          <p class="searched-for" id="searchedFor"></p>
           <p class="temp" id="temp"></p>
           <img class="weather-icon" id="weatherIcon">
           <div class="temp-container">
@@ -34,30 +34,43 @@
         </div>
         <div class="top-right">
           <div class="top-right-left">
-            <p>Feels Like</p>
-            <p class="data" id="feelsLike"></p>
             <p>Humidity</p>
             <p class="data" id="humidity"></p>
-            <p>Visibility</p>
-            <p class="data" id="visibility"></p>
+            <p>Feels like</p>
+            <p class="data" id="feelsLike"></p>
+            <p>Chance of rain</p>
+            <p class="data" id="chanceOfRain"></p>
           </div>
           <div class="top-right-right">
-            <p>Wind Speed</p>
+            <p>Wind speed</p>
             <p class="data" id="windSpeed"></p>
-            <p>Wind Direction</p>
-            <p class="data" id="windDirection"></p>
+            <p>Visibility</p>
+            <p class="data" id="visibility"></p>
             <p>Pressure</p>
             <p class="data" id="pressure"></p>
           </div>
         </div>
       </div>
       <div class="bottom">
-        <div class="bottom-top">
-          <button class="btn-active" id="dailyBtn">Daily</button>
-          <button id="threeHourBtn">3-Hourly</button>
+        <div class="day">
+          <p id="dayOne"></p>
+          <p class="temp" id="dayOneTemp"></p>
+          <img id="dayOneIcon">
         </div>
-        <div class="bottom-bottom">
-          
+        <div class="day">
+          <p id="dayTwo"></p>
+          <p class="temp" id="dayTwoTemp"></p>
+          <img id="dayTwoIcon">
+        </div>
+        <div class="day">
+          <p id="dayThree"></p>
+          <p class="temp" id="dayThreeTemp"></p>
+          <img id="dayThreeIcon">
+        </div>
+        <div class="day">
+          <p id="dayFour"></p>
+          <p class="temp" id="dayFourTemp"></p>
+          <img id="dayFourIcon">
         </div>
       </div>
     </main>
