@@ -31,10 +31,10 @@ let searchFor = "brisbane";
 
 async function celsius() {
   try {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=metric`, { mode: "cors" });
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=metric`, { mode: "cors" });
     const data = await response.json();
     description.textContent = capitilizeFirstLetter(data.weather[0].description);
-    searchedFor.textContent = `Today in ${data.name}`;
+    searchedFor.textContent = `Today in ${data.name}, ${data.sys.country}`;
     temp.textContent = `${round(data.main.temp)} °C`;
     tempMin.textContent = `L: ${round(data.main.temp_min)} °C`;
     tempMax.textContent = `H: ${round(data.main.temp_max)} °C`;
@@ -44,7 +44,7 @@ async function celsius() {
     humidity.textContent = `${data.main.humidity} %`;
     windSpeed.textContent = `${round(data.wind.speed * 3.6)} km/h`;
     visibility.textContent = `${data.visibility / 1000} km`;
-    weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     err.textContent = "";
   } catch(error) {
     err.textContent = `Location not found. Search must be in the form of \"City\", \"City, State\" or \"City, Country\".`;
@@ -53,10 +53,10 @@ async function celsius() {
 
 async function fahrenheit() {
   try {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=imperial`, { mode: "cors" });
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=imperial`, { mode: "cors" });
     const data = await response.json();
     description.textContent = capitilizeFirstLetter(data.weather[0].description);
-    searchedFor.textContent = `Today in ${data.name}`;
+    searchedFor.textContent = `Today in ${data.name}, ${data.sys.country}`;
     temp.textContent = `${round(data.main.temp)} °F`;
     tempMin.textContent = `L: ${round(data.main.temp_min)} °F`;
     tempMax.textContent = `H: ${round(data.main.temp_max)} °F`;
@@ -66,7 +66,7 @@ async function fahrenheit() {
     humidity.textContent = `${data.main.humidity} %`;
     windSpeed.textContent = `${round(data.wind.speed)} mph`;
     visibility.textContent = `${data.visibility / 1000} km`;
-    weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     err.textContent = "";
   } catch(error) {
     err.textContent = `Location not found. Search must be in the form of \"City\", \"City, State\" or \"City, Country\".`;
@@ -74,41 +74,39 @@ async function fahrenheit() {
 }
 
 async function celsiusForcast() {
-  const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=metric`, { mode: "cors" });
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=metric`, { mode: "cors" });
   const data = await response.json();
-  console.log(data);
   chanceOfRain.textContent = `${data.list[0].pop * 100} %`;
   dayOne.textContent = day(data.list[8].dt * 1000);
   dayOneTemp.textContent = `${round(data.list[8].main.temp)} °C`;
-  dayOneIcon.src = `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
+  dayOneIcon.src = `https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
   dayTwo.textContent = day(data.list[16].dt * 1000);
   dayTwoTemp.textContent = `${round(data.list[16].main.temp)} °C`;
-  dayTwoIcon.src = `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
+  dayTwoIcon.src = `https://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
   dayThree.textContent = day(data.list[24].dt * 1000);
   dayThreeTemp.textContent = `${round(data.list[24].main.temp)} °C`;
-  dayThreeIcon.src = `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
+  dayThreeIcon.src = `https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
   dayFour.textContent = day(data.list[32].dt * 1000);
   dayFourTemp.textContent = `${round(data.list[32].main.temp)} °C`;
-  dayFourIcon.src = `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
+  dayFourIcon.src = `https://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
 }
 
 async function fahrenheitForcast() {
-  const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=imperial`, { mode: "cors" });
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=imperial`, { mode: "cors" });
   const data = await response.json();
-  console.log(data);
   chanceOfRain.textContent = `${data.list[0].pop * 100} %`;
   dayOne.textContent = day(data.list[8].dt * 1000);
   dayOneTemp.textContent = `${round(data.list[8].main.temp)} °F`;
-  dayOneIcon.src = `http://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
+  dayOneIcon.src = `https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
   dayTwo.textContent = day(data.list[16].dt * 1000);
   dayTwoTemp.textContent = `${round(data.list[16].main.temp)} °F`;
-  dayTwoIcon.src = `http://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
+  dayTwoIcon.src = `https://openweathermap.org/img/wn/${data.list[16].weather[0].icon}@2x.png`;
   dayThree.textContent = day(data.list[24].dt * 1000);
   dayThreeTemp.textContent = `${round(data.list[24].main.temp)} °F`;
-  dayThreeIcon.src = `http://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
+  dayThreeIcon.src = `https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@2x.png`;
   dayFour.textContent = day(data.list[32].dt * 1000);
   dayFourTemp.textContent = `${round(data.list[32].main.temp)} °F`;
-  dayFourIcon.src = `http://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
+  dayFourIcon.src = `https://openweathermap.org/img/wn/${data.list[32].weather[0].icon}@2x.png`;
 }
 
 function capitilizeFirstLetter(s) {
