@@ -181,13 +181,16 @@ footer {
 
 .fa-github:hover { transform: rotate(360deg) scale(1.2); }
 
-@media (max-width: 776px) {
+@media (max-width: 817px) {
   .top { justify-content: center; }
   .top-left { align-items: center; }
   .bottom { margin-top: 8rem; }
-  .description { margin-bottom: 2rem; }
+  .description { 
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 }
 
-@media (max-width: 776px) {
-  .description { text-align: center; }
+@media (max-width: 461px) {
+  .err { margin-bottom: 2rem; }
 }
