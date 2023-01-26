@@ -76,7 +76,7 @@ async function fahrenheit() {
 async function celsiusForcast() {
   const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=metric`, { mode: "cors" });
   const data = await response.json();
-  chanceOfRain.textContent = `${data.list[0].pop * 100} %`;
+  chanceOfRain.textContent = `${round(data.list[0].pop * 100)} %`;
   dayOne.textContent = day(data.list[8].dt * 1000);
   dayOneTemp.textContent = `${round(data.list[8].main.temp)} °C`;
   dayOneIcon.src = `https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
@@ -94,7 +94,7 @@ async function celsiusForcast() {
 async function fahrenheitForcast() {
   const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchFor}&APPID=b8de990687a8fcfebaf6055f6e082255&units=imperial`, { mode: "cors" });
   const data = await response.json();
-  chanceOfRain.textContent = `${data.list[0].pop * 100} %`;
+  chanceOfRain.textContent = `${round(data.list[0].pop * 100)} %`;
   dayOne.textContent = day(data.list[8].dt * 1000);
   dayOneTemp.textContent = `${round(data.list[8].main.temp)} °F`;
   dayOneIcon.src = `https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@2x.png`;
