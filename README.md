@@ -1,5 +1,5 @@
-# Weather App
+# Weather Dashboard
 
-Utilising the [OpenWeather API](https://openweathermap.org/api/), this weather app was created with HTML, CSS and JS.
+Built with HTML, CSS and JavaScript, this project gives users access to real-time, location specific weather data from the [OpenWeather API](https://openweathermap.org/api/).
 
-[Live Demo](https://thomasmdevelopment.github.io/weather-app/)
+[Live Demo](https://thomasmdevelopment.github.io/weather-dashboard/)
