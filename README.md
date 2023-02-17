@@ -6,4 +6,4 @@ Users can simply search for their location at the top of the page and are then p
 
 The data can be shown in either Celsius or Fahrenheit.
 
-[Live Preview](https://thomasmdevelopment.github.io/weather-dashboard/)
+[Live Preview](https://thomasmartindev.github.io/weather-dashboard/)
